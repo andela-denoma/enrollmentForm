@@ -1,0 +1,12 @@
+body{
+  background: lightblue;
+}
+form h2, div{
+  text-align: center;
+}
+form div{
+  padding: 1%;
+}
+h3{
+  text-align: center;
+}

@@ -5,19 +5,23 @@
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body ng-controller="EnrollmentForm">
-      <form>
+      <form name="userForm" novalidate>
         <h2>ANDELA ENROLLMENT FORM</h2>
+        <h4>Fill your details below</h4>
         <div id="name">
-         Name: <input type ="text" name="userName" ng-model="name"> 
+         Name: <input type ="text" name="username" ng-model="name" required> 
+         <p ng-show="userForm.username.$invalid && !userForm.username.$pristine">You name is required.</p>
         </div>
         <div id="email">
-          Email: <input type ="text" email="userEmail" ng-model="email">
+          Email: <input type ="email" name="email" ng-model="email" required>
+           <p ng-show="userForm.email.$invalid && !userForm.email.$pristine">Enter a valid email.</p>
         </div>
         <div id="location">
-          Location: <input type ="text" location="userLocation" ng-model="location">  
+          Location: <input type ="text" name="location" ng-model="location">
+          <p ng-show="userForm.location.$invalid && !userForm.location.$pristine">Enter your location.</p>  
         </div>
         <div>
-          <button type="submit" id="submit" ng-click ="saveData(event)">Submit</button>
+          <button type="submit" id="submit" ng-click ="saveData()" ng-disabled="userForm.$invalid">Submit</button>
         </div>
       </form>
 

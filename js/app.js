@@ -1,7 +1,8 @@
 var app = angular.module('andela', []);
 
 app.controller('EnrollmentForm', function($scope){
-  $scope.saveData = function($event){
+  $scope.saveData = function(){
+    
     $scope.formInfo = {
      'name': $scope.name,
      'email':   $scope.email,
